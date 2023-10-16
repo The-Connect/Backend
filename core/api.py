@@ -4,4 +4,4 @@ router = Router()
 
 @router.get("/home")
 def home(request):
-    return "ninja is easier than DRF"
+    return "ninja ninja"
