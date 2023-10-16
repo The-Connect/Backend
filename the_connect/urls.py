@@ -17,6 +17,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from ninja import NinjaAPI
+
+from core.api import router as core_router
+
+api = NinjaAPI()
+# Ninja works several layers deep
+#so the url will end with /api/core/home
+api.add_router("/core/", core_router)
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path("api/", api.urls)
 ]
