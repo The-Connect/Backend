@@ -1,6 +1,6 @@
 # admin.py in your app
 from django.contrib import admin
-from .models import Question, FixedAnswer, UserResponse
+from .models import Question, Answer, UserResponse
 
 
 class QuestionAdmin(admin.ModelAdmin):
@@ -23,4 +23,4 @@ class UserResponseAdmin(admin.ModelAdmin):
 
 admin.site.register(UserResponse, UserResponseAdmin)
 admin.site.register(Question, QuestionAdmin)
-admin.site.register(FixedAnswer, AnswersAdmin)
+admin.site.register(Answer, AnswersAdmin)

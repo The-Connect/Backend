@@ -29,3 +29,4 @@ def login_user(request, username: str, password: str):
     else:
         return {"detail": "Invalid credentials"}, 400
 
+
