@@ -1,9 +1,10 @@
 # models.py in your app
 from django.db import models
-from django.contrib.auth.models import User
+from authentication.models import CustomUser
 
 
 # look here for inspiration - https://github.com/tomwalker/django_quiz/blob/master/quiz/models.py
+
 
 
 class Answer(models.Model):
@@ -35,7 +36,7 @@ class Question(models.Model):
 
 
 class UserResponse(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     answer = models.ForeignKey(Answer, on_delete=models.CASCADE, blank=True, null=True)
     timestamp = models.DateTimeField(auto_now_add=True)
 
